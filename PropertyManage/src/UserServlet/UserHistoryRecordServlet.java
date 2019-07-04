@@ -1,22 +1,23 @@
 package UserServlet;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import Model.PropertyDAO;
 import Model.PusDAO;
 import Model.UserDAO;
 import Name.PropertyTable;
 import Name.Pus;
 import Name.PusTable;
-import Name.User;;
+import Name.User;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+;
 /**
  * Servlet implementation class UserHistoryRecordServlet
  */

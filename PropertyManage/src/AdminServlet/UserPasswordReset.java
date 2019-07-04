@@ -1,15 +1,15 @@
 package AdminServlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-//import java.util.List;
+import Model.UserDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-import Model.UserDAO;
+//import java.util.List;
 
 
 public class UserPasswordReset extends HttpServlet{
@@ -24,9 +24,9 @@ public class UserPasswordReset extends HttpServlet{
 	        UserDAO userDao = new UserDAO();
 	        int flag = userDao.update1(id);
 	        if (flag == 1) {
-	        	out.print("<script>alert('÷ÿ÷√≥…π¶£°');window.location='allUserServlet';</script>");
+	        	out.print("<script>alert('ÈáçÁΩÆÊàêÂäüÔºÅ');window.location='allUserServlet';</script>");
         } else {
-        	out.print("<script>alert('÷ÿ÷√ ß∞‹£°');window.location='allUserServlet';</script>");
+        	out.print("<script>alert('ÈáçÁΩÆÂ§±Ë¥•ÔºÅ');window.location='allUserServlet';</script>");
 	        }
 
 	    }

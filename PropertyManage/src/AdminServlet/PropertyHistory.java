@@ -1,16 +1,5 @@
 package AdminServlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import Model.PropertyDAO;
 import Model.PusDAO;
 import Model.UserDAO;
@@ -18,6 +7,16 @@ import Name.PropertyTable;
 import Name.Pus;
 import Name.PusTable;
 import Name.User;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Servlet implementation class PropertyHistoty
@@ -52,7 +51,7 @@ public class PropertyHistory extends HttpServlet {
 				pus = pusDAO.selectByPropertyid(pid);
 				if(pus.isEmpty()) {
 					PrintWriter out = response.getWriter();
-					out.println("<script language='javascript'>alert('¸Ã×Ê²úÎŞ³ö½èÀúÊ·')</script>");
+					out.println("<script language='javascript'>alert('è¯¥èµ„äº§æ— å‡ºå€Ÿå†å²')</script>");
 					out.println("<script language='javascript'>window.location.href='FindProperty.jsp'</script>");
 				}
 				else {

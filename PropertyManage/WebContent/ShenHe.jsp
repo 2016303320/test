@@ -127,7 +127,7 @@ table.style td {
     <th>购买日期</th>
     <th>用户名</th>
     <th>账号</th>
-    <th>电话号码</th>
+    <th>邮箱</th>
     <th>申请日期</th>
     <th>批准</th>
     <th>拒绝</th>
@@ -141,7 +141,7 @@ table.style td {
     <th> ${shenhe.buydate}</th>
     <th> ${shenhe.username}</th>
     <th> ${shenhe.account}</th>
-    <th> ${shenhe.phone}</th>
+    <th> ${shenhe.email}</th>
     <th> ${shenhe.date}</th>
     <th> <a href="yes?userid=${shenhe.userid }&pid=${shenhe.propertyid }">批准</a></th>
     <th> <a href="no?userid=${shenhe.userid }&pid=${shenhe.propertyid }">拒绝</a></th>

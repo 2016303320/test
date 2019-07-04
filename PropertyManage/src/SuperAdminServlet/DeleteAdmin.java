@@ -1,29 +1,28 @@
 package SuperAdminServlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
+import Model.AdminDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import Model.AdminDao;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 
 /**
  * Servlet implementation class DeleteAdmin
  */
 public class DeleteAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DeleteAdmin() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public DeleteAdmin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -36,18 +35,18 @@ public class DeleteAdmin extends HttpServlet {
 
 		String ids = request.getParameter("id");
 		int  id = Integer.parseInt(ids);
-		
+
 		AdminDao a = new AdminDao();
 		boolean judge;
 		try {
 			judge = a.DeleteAdmin(id);
 			if(judge==false) {
-				out.print("<script>alert('…æ≥˝ ß∞‹£°');window.location='SearchAdmin.jsp';</script>");
+				out.print("<script>alert('Âà†Èô§Â§±Ë¥•ÔºÅ');window.location='SearchAdmin.jsp';</script>");
 			}
 			else {
-				out.print("<script>alert('…æ≥˝≥…π¶£°');window.location='SearchAdmin.jsp';</script>");
+				out.print("<script>alert('Âà†Èô§ÊàêÂäüÔºÅ');window.location='SearchAdmin.jsp';</script>");
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

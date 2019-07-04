@@ -326,4 +326,12 @@
     <servlet-name>SuperAdminLogin</servlet-name>
     <url-pattern>/SuperAdminLogin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>UserServlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

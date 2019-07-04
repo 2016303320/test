@@ -1,30 +1,29 @@
 package SuperAdminServlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
+import Model.AdminDao;
+import Name.AdminTable;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import Model.AdminDao;
-import Name.AdminTable;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 
 /**
  * Servlet implementation class UpdateAdmin
  */
 public class UpdateAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UpdateAdmin() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public UpdateAdmin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -49,20 +48,20 @@ public class UpdateAdmin extends HttpServlet {
 		String password = request.getParameter("password");
 		String phone = request.getParameter("phone");
 		String name = request.getParameter("name");
-		
+
 		AdminTable admin = new AdminTable(id,account,password,phone,name,1);
-		
+
 		AdminDao a = new AdminDao();
 		boolean judge;
 		try {
 			judge = a.UpdateAdmin(admin);
 			if(judge==false) {
-				out.print("<script>alert('∏¸–¬ ß∞‹£°');window.location='SearchAdmin.jsp';</script>");
+				out.print("<script>alert('Êõ¥Êñ∞Â§±Ë¥•ÔºÅ');window.location='SearchAdmin.jsp';</script>");
 			}
 			else {
-				out.print("<script>alert('∏¸–¬≥…π¶£°');window.location='SearchAdmin.jsp';</script>");
+				out.print("<script>alert('Êõ¥Êñ∞ÊàêÂäüÔºÅ');window.location='SearchAdmin.jsp';</script>");
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

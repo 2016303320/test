@@ -1,18 +1,16 @@
 package AdminServlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.Calendar;
-
+import Model.PropertyDAO;
+import Model.PusDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import Model.PropertyDAO;
-import Model.PusDAO;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.Calendar;
 
 /**
  * Servlet implementation class yes
@@ -50,23 +48,23 @@ public class yes extends HttpServlet {
     	java.sql.Date date = new java.sql.Date(d.getTime());
     	PropertyDAO propertyDAO = new PropertyDAO();
 		try {
-			boolean f1= propertyDAO.updateStatus(pid, "²»¿ÉÓÃ");
+			boolean f1= propertyDAO.updateStatus(pid, "ä¸å¯ç”¨");
 			if(f1==false) {
-	    		PrintWriter out=response.getWriter();
-	    		out.print("<script>alert('²úÆ·×´Ì¬¸ü¸ÄÊ§°Ü£¬ÇëÖØÊÔ');window.location='ShenheServlet';</script>");
+				PrintWriter out=response.getWriter();
+				out.print("<script>alert('äº§å“çŠ¶æ€æ›´æ”¹å¤±è´¥ï¼Œè¯·é‡è¯•');window.location='ShenheServlet';</script>");
 
-	    	}
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		PusDAO pusDAO = new PusDAO();
-    	boolean f=pusDAO.changeStatus(userid, pid, "´ıÉóºË", "ÒÑÁìÈ¡", date);
-    	if(f==false) {
-    		PrintWriter out=response.getWriter();
-    		out.print("<script>alert('Åú×¼Ê§°Ü£¬ÇëÖØÊÔ');window.location='ShenheServlet';</script>");
+		boolean f=pusDAO.changeStatus(userid, pid, "å¾…å®¡æ ¸", "å·²é¢†å–", date);
+		if(f==false) {
+			PrintWriter out=response.getWriter();
+			out.print("<script>alert('æ‰¹å‡†å¤±è´¥ï¼Œè¯·é‡è¯•');window.location='ShenheServlet';</script>");
 
-    	}
+		}
 		
     	
     	request.getRequestDispatcher("./ShenheServlet").forward(request, response);

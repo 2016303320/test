@@ -11,7 +11,7 @@
 function checkForm(){
 	var id1=document.getElementById("1").value;
 	if (id1==null||id1==''){
-			alert("账户名不能为空！");
+			alert("账户不能为空！");
 			return false;
 	}
 	var id2=document.getElementById("2").value;
@@ -119,11 +119,12 @@ table.style th {
 	border-color: #999999;
 }
 table.style td {
-	background:#dcddc0;
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #999999;
+    background: #dcddc0;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #999999;
+}
   </style>
   <p align="right"><b><font color="blue"><a href="adminLogin.jsp">管理员入口</a></font></b></p>
   <body>

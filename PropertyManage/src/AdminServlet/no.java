@@ -1,17 +1,14 @@
 package AdminServlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import java.util.Calendar;
+import Model.PusDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
-import Model.PusDAO;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Calendar;
 
 /**
  * Servlet implementation class no
@@ -55,15 +52,15 @@ public class no extends HttpServlet {
     	java.sql.Date date = new java.sql.Date(d.getTime());
 
 		PusDAO pusDAO = new PusDAO();
-    	boolean f=pusDAO.changeStatus(userid, pid, "´ıÉóºË", "ÒÑ¾Ü¾ø", date);
-    	if(f==false) {
-    		PrintWriter out=response.getWriter();
-    		out.print("<script>alert('²Ù×÷Ê§°Ü£¬ÇëÖØÊÔ');window.location='ShenheServlet';</script>");
+		boolean f=pusDAO.changeStatus(userid, pid, "å¾…å®¡æ ¸", "å·²æ‹’ç»", date);
+		if(f==false) {
+			PrintWriter out=response.getWriter();
+			out.print("<script>alert('æ“ä½œå¤±è´¥ï¼Œè¯·é‡è¯•');window.location='ShenheServlet';</script>");
 
-    	}
-		
-    	
-    	request.getRequestDispatcher("./ShenheServlet").forward(request, response);
+		}
+
+
+		request.getRequestDispatcher("./ShenheServlet").forward(request, response);
 		
 	}
 
